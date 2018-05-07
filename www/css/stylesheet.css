@@ -1,0 +1,356 @@
+:root{
+    --primary: #E0E0E0/*#bebebe;/*#313d4d*/;
+    --green: #04b608;
+    --light: #fff/*#e3e3e3*/;
+    --dark: #C6C6C6; /*#262d37*/;
+    --touched: rgb(29, 41, 117);
+    --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.body{
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+.header{
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    z-index: 2;
+}
+
+.header .buttons{
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    top:0;
+    width: 100%;
+    height: 8rem;
+    background-color: var(--primary);
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: none;
+}
+
+.header .buttons button{
+    background-color: #ff3c3c;
+    margin: 2px;
+    height: 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.header button.active{
+    background-color: var(--green) !important;
+}
+
+.header button:active{
+    background-color: var(--green);
+}
+
+.header .buttons .found{
+    background-color: var(--dark);
+}
+
+.header .buttons .more{
+    background-color: var(--dark);
+}
+
+.header .input{
+    width: calc(100%-2rem);
+    font-size: 16px;
+    z-index: 2;
+    margin: 8.7rem 0.5rem 0 0.5rem;
+}
+
+input{
+    border: none;
+    width: 99%;
+    outline: none;
+    padding-left: 1rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    margin: 0;
+    bottom: 20px;
+}
+
+.header .input input{
+    height: 2rem;
+    font-size: 1.1rem;
+    background-color: var(--dark);
+    box-shadow: var(--shadow);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background-image: url('../images/search.png');
+    background-position: 13px 8.3px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+
+.input{
+    position: relative;
+}
+
+.header .input .close{
+    background-image:url('../images/close.png');
+    background-position:50%,50%;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: calc(100% - 40px);
+    top: 0.5px;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    overflow-x: hidden;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.pages{
+    margin-top: 180px;
+    display: grid;
+    position: absolute;
+    width: 600%;
+    grid-template-columns: repeat(6, 16.6666667%);
+}
+
+.page{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.sound{
+    background-color: var(--primary);
+    border-radius: 10%;
+    padding: 8px;
+    margin: 4.8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    max-height: 160px;
+    min-height: 100px;
+}
+
+.sound .buttons{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.3rem;
+    min-height: 2rem;
+}
+
+.sound .buttons > *{
+    background-color: var(--dark);
+    margin: 0.7rem 0 0.2rem 0;
+    border-radius: 0.25rem;
+}
+
+.sound .name{
+    margin-right: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.6rem;
+}
+
+.sound .images .big{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 100%;
+}
+
+.sound .images .big img{
+    position: absolute;
+}
+
+.sound .images > img{
+    box-shadow: var(--shadow);
+}
+
+.sound .images{
+    position: relative;
+}
+
+.sound .small{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 30%;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark);
+    padding: 0.2rem;
+    margin: 0;
+    border-radius: 100%;
+    box-shadow: var(--shadow);
+}
+
+.sound .small img{
+    margin: 0;
+    width: 60%;
+    height: 60%;
+}
+
+.share img{
+    width: 70%;
+    height: 70%;
+    margin: 0.3rem 0.1rem 0.1rem 0;
+    color: black;
+}
+
+button{
+    font-family: 'Roboto', sans-serif;
+    color:black;
+    border: none;
+    transition: all 0.2s;
+    text-decoration: none;
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+.popup{
+    display: none;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.555);
+    height: 1100%;
+    width: calc(100%);
+    padding: 0;
+    margin: 0;
+    top: -195px;
+}
+
+.popupcontent{
+    position: absolute;
+    box-sizing: border-box;
+    background-color: var(--primary);
+    width: calc(100% - 2rem);
+    height: 85%;
+    padding: 1rem;
+    margin: 1rem;;
+    top: 700px;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.popup .close{
+    position: absolute;
+    background-image:url('../images/close.png');
+    background-position:50%,50%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 40px;
+    height: 40px;
+    bottom: 0px;
+    background-color: var(--primary);
+}
+
+.popupcontent{
+    display: flex;
+    justify-content: center;
+}
+
+.popupcontent .removeads button{
+    margin-top: 1.5rem;
+    width: 270px;
+    background-color: var(--dark);
+    padding: 0.7rem;
+    border-radius: 0.25rem;
+}
+
+.popupcontent .restore{
+    display: flex;
+    justify-content: center;
+}
+
+.popupcontent .restore button{
+    font-size: 0.7rem;
+    margin-top: 0.7rem;
+    width: 120px;
+    background-color: var(--dark);
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    left: calc(50% - 60px);
+}
+
+.popupcontent .column{
+    display: grid;
+    grid-template-columns: 48% 4% 48%;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.popupcontent .row{
+    box-sizing: border-box;
+    background-color: var(--dark);
+    border-radius: 0.25rem;
+    padding: 0.3rem;
+    position: relative;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.leftmargin{
+    margin: 0 1rem 0 0 ;
+}
+
+.popupcontent .margin{
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.popupcontent .follow{
+    margin-bottom: 1rem;
+}
+
+.fb{
+    position: absolute;
+    background-image: url('../images/facebook.png');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    right: 20%;
+    bottom: 10px;
+}
+
+.insta{
+    position: absolute;
+    background-image: url('../images/instagram.png');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    left: 20%;
+    bottom: 10px;
+}

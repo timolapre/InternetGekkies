@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Blank App</title>
-    </head>
-    <body>
-        <script type="text/javascript" src="cordova.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Blank App</title>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body class='body'>
+
+    <div class="header">
+        <div class="buttons">
+            <button id="1" class="active found">Bekend van Flabber</button>
+            <button id="2" class="found">Bekend van PowNed</button>
+            <button id="3" class="found">Bekend van TV</button>
+            <button id="4" class="found">Virals</button>
+            <button id="5" class="found">Overige Gekkies</button>
+            <button id="6" class="more">Meer...</button>
+        </div>
+        <div class="input">
+            <input type="text" id="myInput" onkeyup="SearchNames()" placeholder="Zoeken..." title="Zoeken...">
+            <div class="close"></div>
+        </div>
+
+        <div class="popup" id="more"></div>
+        
+    </div>
+
+    <div class="content">
+        <div class="pages" id="myUL">
+            <div class="page" id="page0"></div>
+            <div class="page" id="page1"></div>
+            <div class="page" id="page2"></div>
+            <div class="page" id="page3"></div>
+            <div class="page" id="page4"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
 </html>
